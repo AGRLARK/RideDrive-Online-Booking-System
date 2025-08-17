@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Uber-like Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Background & Surface Colors */
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    --surface: 0 0% 100%;
+    --surface-secondary: 220 14% 96%;
+
+    /* Card & Popover */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary Brand Colors - Modern Blue-Green */
+    --primary: 195 100% 39%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 195 100% 35%;
+    --primary-light: 195 100% 95%;
+
+    /* Secondary Colors */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --secondary-hover: 220 14% 92%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 95%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+    
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+    --danger-light: 0 84% 95%;
+
+    /* Neutral Colors */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Destructive (Legacy) */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 220 14% 91%;
+    --input: 220 14% 91%;
+    --ring: 195 100% 39%;
+
+    /* Design Tokens */
+    --radius: 12px;
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(195 100% 45%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 76% 42%));
+    --gradient-surface: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--surface-secondary)));
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Background & Surface Colors */
+    --background: 222 47% 6%;
+    --foreground: 0 0% 98%;
+    --surface: 222 47% 8%;
+    --surface-secondary: 222 47% 10%;
+
+    /* Card & Popover */
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary Brand Colors */
+    --primary: 195 100% 50%;
+    --primary-foreground: 222 47% 6%;
+    --primary-hover: 195 100% 55%;
+    --primary-light: 195 100% 15%;
+
+    /* Secondary Colors */
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 222 47% 18%;
+
+    /* Status Colors */
+    --success: 142 76% 45%;
+    --success-foreground: 222 47% 6%;
+    --success-light: 142 76% 12%;
+    
+    --warning: 38 92% 55%;
+    --warning-foreground: 222 47% 6%;
+    --warning-light: 38 92% 12%;
+    
+    --danger: 0 84% 65%;
+    --danger-foreground: 222 47% 6%;
+    --danger-light: 0 84% 12%;
+
+    /* Neutral Colors */
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 47% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive (Legacy) */
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 222 47% 6%;
+
+    /* Border & Input */
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 195 100% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  button, input, select, textarea {
+    transition: var(--transition-smooth);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+@layer components {
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .bg-gradient-surface {
+    background: var(--gradient-surface);
+  }
+
+  /* Custom shadows */
+  .shadow-smooth {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Map container */
+  .map-container {
+    @apply relative w-full h-full overflow-hidden rounded-xl shadow-smooth;
+  }
+
+  /* Ride card animations */
+  .ride-card {
+    @apply bg-card border border-border rounded-xl p-4 shadow-smooth hover:shadow-float;
+    transition: var(--transition-smooth);
+  }
+
+  .ride-card:hover {
+    transform: translateY(-2px);
+  }
+}
